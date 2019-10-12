@@ -1,0 +1,11 @@
+syntax = "proto3";
+package fib;
+service Fib {
+        rpc Calc(Request) returns (Response) {}
+}
+message Request {
+        int32 in = 1;
+}
+message Response {
+        int32 out = 1;
+}
