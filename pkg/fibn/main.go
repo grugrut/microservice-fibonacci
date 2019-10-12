@@ -38,7 +38,7 @@ func (s *server) Calc(ctx context.Context, req *pb.Request) (*pb.Response, error
 
 		ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 		defer cancel()
-		r, err := c.Calc(ctx, &pb.Request{In: 1})
+		r, err := c.Calc(ctx, &pb.Request{In: req.In})
 		if err != nil {
 			log.Fatalf("could not connect %v", err)
 		}
@@ -90,7 +90,7 @@ func (s *server) Calc(ctx context.Context, req *pb.Request) (*pb.Response, error
 
 	ctx, cancel2 := context.WithTimeout(context.Background(), time.Second)
 	defer cancel2()
-	r2, err := c2.Calc(ctx, &pb.Request{In: n1})
+	r2, err := c2.Calc(ctx, &pb.Request{In: n2})
 	if err != nil {
 		log.Fatalf("could not connect %v", err)
 	}

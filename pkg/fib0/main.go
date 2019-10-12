@@ -17,7 +17,7 @@ type server struct{}
 
 func (s *server) Calc(ctx context.Context, req *pb.Request) (*pb.Response, error) {
 	log.Printf("Received: %v", req.In)
-	return &pb.Response{Out: 1}, nil
+	return &pb.Response{Out: 0}, nil
 }
 
 func main() {
